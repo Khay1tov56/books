@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Books</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+  <header class="site-header p-4">
+    <div class="container">
+      <div class="wrapper d-flex align-items-center justify-content-between">
+        <a class="site-logo" href="index.html">
+          <img src="./images/logo.jpg" width="100" height="80" alt="Logo">
+        </a>
+        <ul class="site-list d-flex align-items-center list-unstyled">
+          <li class="site-item me-5 bg-light"><a class="site-href text-decoration-none fs-4 text-black-50" href="https://asaxiy.uz/product/knigi?language=ru" target="_blank">About</a>
+          </li>
+          <li class="site-item me-5 bg-light"><a class="site-href text-decoration-none fs-4 text-black-50" href="index.html">Home</a></li>
+          <li class="site-item bg-light"><a class="site-href text-decoration-none fs-4 text-black-50" href="https://github.com/Khay1tov56" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="site-wrap bg-info p-5">
+      <div class="container">
+        <div class="intro">
+          <form class="form" method="post" autocomplete="off">
+            <label class=" d-flex align-items-center mb-5 w-75 mx-auto">
+              <input type="text" name="text" class="form-control textinput" placeholder="Typing ...">
+              <button class="btn btn-danger ms-5" type="submit">Search</button>
+            </label>
+            <label class=" d-flex align-items-center mb-5  mx-auto">
+              <select name="select" class="form-select selectAll d-block w-25 me-2 mx-0">
+                <option selected disabled>All</option>
+                <option value="aazz">A-Z</option>
+                <option value="zzaa">Z-A</option>
+                <option value="yearstart">Year-Start</option>
+                <option value="yearend">Year-End</option>
+                <option value="pagestart">Page-Start</option>
+                <option value="pageend">Page-End</option>
+              </select>
+              <input type="number" name="Start year" class="form-control startyearinput w-25 me-2 mx-auto" placeholder="Start Year">
+              <input type="number" name="End Year" class="form-control endyearinput w-25 me-2 mx-auto" placeholder="End Year">
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="p-5">
+      <div class="container">
+        <div class="wraplist">
+          <ul class="row list-unstyled lists">
+
+          </ul>
+          </div>
+          </div>
+    </section>
+  </main>
+  
+  <template class="template">
+        
+          <li class="carditem m-5 w-25">
+              <div class="cards">
+                <img class="book" src="./images/anna-karenina.jpg" width="100" height="360" alt="image">
+                <div class="carditems p-3">
+                  <h3 class="title my-2">The book</h3>
+                  <div class="wrapcard d-flex justify-content-between align-items-center my-3">
+                    <div class="left d-flex align-items-center">
+                      <img class="me-2" src="./icons/pages.svg" width="25" height="25" alt="icon">
+                      <h4 class="page fs-5">789</h4>
+                    </div>
+                    <div class="center d-flex align-items-center">
+                      <img class="me-2" src="./icons/author.svg" width="25" height="25" alt="">
+                      <h5 class="author fs-5">author</h5>
+                    </div>
+                  </div>
+                  <div class="wrapbtm d-flex justify-content-between align-items-center">
+                    <div class="left d-flex align-items-center">
+                      <img class="me-2" src="./icons/year.svg"  width="25" height="25" alt="icon">
+                      <h4 class="year fs-5">2010</h4>
+                    </div>
+                    <div class="right d-flex align-items-center">
+                      <img class="me-2" src="./icons/language.svg"  width="25" height="25" alt="icon">
+                      <h4 class="language fs-5">English</h4>
+                    </div>
+                  </div>
+                  <a class="ahref btn btn-link" href="#" target="_blank">Link</a>
+                </div>
+              </div>
+            
+          </li>
+</template>
+  <!-- scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="/js/books.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
