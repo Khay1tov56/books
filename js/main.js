@@ -51,10 +51,8 @@ function sortingAll(sortedList, select) {
       sortedList.sort((a,b) => a.title.localeCompare(b.title))
     }else if(select === "zzaa") {
       sortedList.sort((a,b) => b.title.localeCompare(a.title))
-  
     }else if (select === "yearstart") {
       sortedList.sort((a,b) => a.year - b.year)
-  
     }else if (select === "yearend") {
       sortedList.sort((a,b) => b.year - a.year)
     }else if (select === "pagestart") {
@@ -64,6 +62,8 @@ function sortingAll(sortedList, select) {
     }
   }
 
+
+
 elForm.addEventListener("submit", function (evt) {
     evt.preventDefault();
 
@@ -71,21 +71,62 @@ elForm.addEventListener("submit", function (evt) {
     let absd = showSearchMovies(searchElement);
 
     
-    // let fromYearValue = elYearStartInput.value;
-    // let toYearValue = elYearEndInput.value;
+    let fromYearValue = elYearStartInput.value;
+    let toYearValue = elYearEndInput.value;
+
+    console.log(fromYearValue, toYearValue);
+
+
+    let filteredMovieYear = books.filter(item => {
+      if (fromYearValue !== "" && toYearValue !== "") {
+        return item.year >= fromYearValue && item.year <= toYearValue;
+      } else if (fromYearValue !== "") {
+        return item.year >= fromYearValue;
+      } else if (toYearValue !== "") {
+        return item.year <= toYearValue;
+      }
+    });
+    filteredMovieYear.sort((a, b) => a.year - b.year);
+
 
     if (absd.length > 0) {
         sortingAll(absd, elSelectAll.value);
         createList(absd);
+        
     } else {
         alert("Movie not found");
     }
+    
+  })
 
-})
+
 
 createList(books);
-// showSearchMovies()
-// elInput.value = "";
+
+
+// filterYearForm.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
+
+//   let fromYearValue = fromYear.value;
+//   let toYearValue = toYear.value;
+
+//   // console.log(fromYearValue);
+//   // console.log(toYearValue);
+
+//   const filteredMovieYear = oneHundredMovies.filter(item => {
+//     if (fromYearValue !== "" && toYearValue !== "") {
+//       return item.movie_year >= fromYearValue && item.movie_year <= toYearValue;
+//     } else if (fromYearValue !== "") {
+//       return item.movie_year >= fromYearValue;
+//     } else if (toYearValue !== "") {
+//       return item.movie_year <= toYearValue;
+//     }
+//   });
+//   console.log(filteredMovieYear);
+//   filteredMovieYear.sort((a, b) => a.movie_year - b.movie_year);
+//   showMovies(filteredMovieYear);
+
+// });
 
 
 
